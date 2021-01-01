@@ -1,19 +1,19 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-
 import PageTitle from "../../components/Title/PageTitle";
+
 
 const Home = () => {
 
     const [count, setCount] = useState(1)
 
     const countUp = () => {
-        if(count >= 10) return;
+        if (count >= 10) return;
         setCount(count + 1)
     }
 
     const countDown = () => {
-        if (count ===1) return;
+        if (count === 1) return;
         setCount(count - 1)
     }
 
@@ -22,27 +22,27 @@ const Home = () => {
             <PageTitle text={"Page Home"}/>
             <Count>{count}</Count>
             <Buttons>
-                <Button onClick={countUp}>+</Button>
-                <Button onClick={countDown}>-</Button>
+                <Button onClick={countUp}>플러스</Button>
+                <Button onClick={countDown}>마이너스</Button>
             </Buttons>
         </Container>
     )
 }
 
 const Container = styled.div`
-  padding: 100px 0;
-`;
+  padding: 100px;
+`
 
 const Count = styled.div`
   font-size: 30px;
   text-align: center;
   margin: 30px 0;
-`;
+`
 
 const Buttons = styled.div`
   display: flex;
   justify-content: center;
-`;
+`
 
 const Button = styled.div`
   width: 50px;
@@ -55,10 +55,6 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  &:hover {
-    background-color: #e0e0e0;
-  }
-`;
+`
 
 export default Home;
