@@ -1,11 +1,10 @@
-import React from 'react';
-import styled, {createGlobalStyle} from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 import Header from "./components/Header";
-import Home from "./pages/Home";
+import Home from "./pages/Home"
 
-
-function App() {
+const App = () => {
     return (
         <Container className={"App"}>
             <GlobalStyled/>
@@ -15,18 +14,18 @@ function App() {
     )
 }
 
-const GlobalStyled = createGlobalStyle`
+const Container = styled.div`
+
+`
+
+const GlobalStyled = styled.div`
   * {
     padding: 0;
     margin: 0;
-    list-style: none;
     text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
   }
-`
-
-const Container = styled.div`
-  
 `
 
 export default App;

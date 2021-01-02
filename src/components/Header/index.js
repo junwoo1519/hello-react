@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 0 50px;
   align-items: center;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.13);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
 `
 
 const Logo = styled.div`
@@ -43,5 +43,4 @@ const NavItem = styled.div`
   font-size: 18px;
   text-transform: capitalize;
 `
-
 export default Header;

@@ -11,8 +11,8 @@ const PageTitle = (props) => {
 
 const Container = styled.div`
   text-align: center;
-  margin: 30px;
-  
+  margin-bottom: 30px;
+
   h2 {
     font-size: 40px;
     text-transform: uppercase;

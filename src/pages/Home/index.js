@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import PageTitle from "../../components/Title/PageTitle";
 
-
 const Home = () => {
 
     const [count, setCount] = useState(1)
@@ -17,13 +16,14 @@ const Home = () => {
         setCount(count - 1)
     }
 
+
     return (
         <Container>
-            <PageTitle text={"Page Home"}/>
+            <PageTitle props={"Page Home"}/>
             <Count>{count}</Count>
             <Buttons>
-                <Button onClick={countUp}>플러스</Button>
-                <Button onClick={countDown}>마이너스</Button>
+                <Button onClick={countUp}>+</Button>
+                <Button onClick={countDown}>-</Button>
             </Buttons>
         </Container>
     )
@@ -45,8 +45,8 @@ const Buttons = styled.div`
 `
 
 const Button = styled.div`
-  width: 50px;
   height: 50px;
+  width: 50px;
   border: 1px solid #000;
   margin: 0 5px;
   font-size: 26px;
@@ -55,6 +55,9 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-`
 
+  &:hover {
+    background-color: #e0e0e0;
+  }
+`
 export default Home;
