@@ -40,7 +40,7 @@ const NavItem = styled.div`
   align-items: center;
   color: #333;
   font-weight: 500;
-  font-size: 18px;
   text-transform: capitalize;
 `
+
 export default Header;

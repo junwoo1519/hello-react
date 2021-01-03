@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 
 import Header from "./components/Header";
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 
 const App = () => {
     return (
-        <Container className={"App"}>
+        <Container ClassName={"App"}>
             <GlobalStyled/>
             <Header/>
             <Home/>
@@ -14,18 +14,17 @@ const App = () => {
     )
 }
 
-const Container = styled.div`
-
-`
-
-const GlobalStyled = styled.div`
+const GlobalStyled = createGlobalStyle`
   * {
-    padding: 0;
     margin: 0;
-    text-decoration: none;
+    padding: 0;
     list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
   }
+`
+
+const Container = styled.div`
 `
 
 export default App;

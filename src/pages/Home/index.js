@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+
 import PageTitle from "../../components/Title/PageTitle";
 
 const Home = () => {
@@ -15,8 +16,6 @@ const Home = () => {
         if (count === 1) return;
         setCount(count - 1)
     }
-
-
     return (
         <Container>
             <PageTitle props={"Page Home"}/>
@@ -30,7 +29,7 @@ const Home = () => {
 }
 
 const Container = styled.div`
-  padding: 100px;
+  padding: 100px 0;
 `
 
 const Count = styled.div`
@@ -60,4 +59,5 @@ const Button = styled.div`
     background-color: #e0e0e0;
   }
 `
+
 export default Home;
