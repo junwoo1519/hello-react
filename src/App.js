@@ -1,5 +1,5 @@
-import React from "react";
-import styled, {createGlobalStyle} from "styled-components";
+import React from "react"
+import styled, {createGlobalStyle} from "styled-components"
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -16,11 +16,11 @@ const App = () => {
 
 const GlobalStyled = createGlobalStyle`
   * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
-    text-decoration: none;
     box-sizing: border-box;
+    text-decoration: none;
   }
 `
 

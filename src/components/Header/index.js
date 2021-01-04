@@ -20,13 +20,12 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 0 50px;
   align-items: center;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.13);
+  box-shadow: 1px 1px 10px #000;
 `
 
 const Logo = styled.div`
+  display: flex;
   text-transform: uppercase;
-  font-weight: bold;
-  color: #333;
 `
 
 const Nav = styled.div`
@@ -40,6 +39,7 @@ const NavItem = styled.div`
   align-items: center;
   color: #333;
   font-weight: 500;
+  font-size: 18px;
   text-transform: capitalize;
 `
 
