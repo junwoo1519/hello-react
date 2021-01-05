@@ -24,8 +24,9 @@ const Container = styled.div`
 `
 
 const Logo = styled.div`
-  display: flex;
   text-transform: uppercase;
+  font-weight: bold;
+  color: #333;
 `
 
 const Nav = styled.div`
