@@ -18,8 +18,8 @@ const Header = () => {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
   align-items: center;
+  padding: 0 50px;
   box-shadow: 1px 1px 10px #000;
 `
 
