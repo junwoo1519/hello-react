@@ -2,20 +2,28 @@ import React from "react";
 import styled, {createGlobalStyle} from "styled-components";
 
 import Header from "./components/Header";
+import {Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
+import Todo from "./pages/Todo";
+import Photo from "./pages/Photo";
+import Video from "./pages/Video";
 
 const App = () => {
     return (
-        <Container ClassName={"App"}>
+        <Container className={"App"}>
             <GlobalStyled/>
             <Header/>
-            <Home/>
+
+            <Switch>
+                <Route exact path={"/"} component={Home}/>
+                <Route path={"/todo"} component={Todo}/>
+                <Route path={"/photo"} component={Photo}/>
+                <Route path={"/video"} component={Video}/>
+            </Switch>
+
         </Container>
     )
 }
-
-const Container = styled.div`
-`
 
 const GlobalStyled = createGlobalStyle`
   * {
@@ -25,6 +33,9 @@ const GlobalStyled = createGlobalStyle`
     box-sizing: border-box;
     text-decoration: none;
   }
+`;
+
+const Container = styled.div`
 `
 
 export default App;
