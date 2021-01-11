@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import {IoClose} from "react-icons/all";
+import {CgCloseR} from "react-icons/all";
 
 const Popup = ({closePopup}) => {
     return (
         <Container>
             <Content>
-                <h1>Lorem ipsum dolor.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At iure neque nihil officiis reprehenderit
-                    sed. A aspernatur cumque distinctio eos esse laboriosam libero natus odio praesentium quam, qui
-                    rerum sapiente.</p>
+                <h2>Lorem ipsum dolor.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt ea expedita illo, laudantium
+                    magni molestias praesentium quis sint. Esse excepturi id ipsum, laborum nemo nulla sequi? Mollitia,
+                    natus, necessitatibus.</p>
                 <ButtonClose onClick={closePopup}>
-                    <IoClose/>
+                    <CgCloseR/>
                 </ButtonClose>
             </Content>
         </Container>
@@ -21,11 +21,11 @@ const Popup = ({closePopup}) => {
 const Container = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, .6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +43,7 @@ const Content = styled.div`
   h1 {
     font-size: 26px;
     margin-bottom: 10px;
+
   }
 
   p {
@@ -53,12 +54,13 @@ const Content = styled.div`
 `;
 
 const ButtonClose = styled.div`
-  position: absolute;
+    position: absolute;
   right: 0;
   top: 0;
   font-size: 24px;
   padding: 10px;
   cursor: pointer;
 `;
+
 
 export default Popup;
