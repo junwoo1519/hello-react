@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {CgMenuMotion} from "react-icons/all";
 import SideMenu from "../SideMenu";
+import {Link, useHistory} from "react-router-dom";
 
 const Header = () => {
 
@@ -10,16 +11,24 @@ const Header = () => {
         setSideMenu(!sideMenu);
     }
 
+    const history = useHistory();
+    const navigate = (url) => {
+        history.push(url);
+    }
+
+
+
     return (
         <>
             <Container>
                 <Logo>Logo</Logo>
                 <Gnb>
                     <Nav>
-                        <NavItem>home</NavItem>
-                        <NavItem>todo</NavItem>
-                        <NavItem>photo</NavItem>
-                        <NavItem>video</NavItem>
+                        <NavItem to={'/'}>home</NavItem>
+                        <NavItem to={'/todo'}>todo</NavItem>
+                        <NavItem to={'/photo'}>photo</NavItem>
+                        <NavItem to={'/video'}>video</NavItem>
+                        <NavItem to={'/user'}>user</NavItem>
                     </Nav>
                     <ButtonMenu onClick={handleSideMenu}>
                         <CgMenuMotion/>
@@ -51,7 +60,7 @@ const Nav = styled.div`
 
 `;
 
-const NavItem = styled.div`
+const NavItem = styled(Link)`
   height: 70px;
   padding: 0 30px;
   display: flex;
