@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import {CgCloseR} from "react-icons/all";
+import {RiMailCloseLine} from "react-icons/all";
 
-const Popup = ({closePopup}) => {
+const Popup = (props) => {
+
+    const {closePopup} = props
+
     return (
         <Container>
             <Content>
-                <h2>Lorem ipsum dolor.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt ea expedita illo, laudantium
-                    magni molestias praesentium quis sint. Esse excepturi id ipsum, laborum nemo nulla sequi? Mollitia,
-                    natus, necessitatibus.</p>
+                <h1>Lorem ipsum dolor.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequuntur cum dignissimos
+                    doloremque eos eum impedit, maxime mollitia nihil officia omnis placeat, quasi quibusdam quos
+                    similique tempore voluptas, voluptate!</p>
                 <ButtonClose onClick={closePopup}>
-                    <CgCloseR/>
+                    <RiMailCloseLine/>
                 </ButtonClose>
             </Content>
         </Container>
@@ -21,14 +24,14 @@ const Popup = ({closePopup}) => {
 const Container = styled.div`
   position: fixed;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 
 const Content = styled.div`
@@ -42,8 +45,7 @@ const Content = styled.div`
 
   h1 {
     font-size: 26px;
-    margin-bottom: 10px;
-
+    margin-bottom: 30px;
   }
 
   p {
@@ -54,13 +56,12 @@ const Content = styled.div`
 `;
 
 const ButtonClose = styled.div`
-    position: absolute;
+  position: absolute;
   right: 0;
   top: 0;
   font-size: 24px;
   padding: 10px;
   cursor: pointer;
 `;
-
 
 export default Popup;

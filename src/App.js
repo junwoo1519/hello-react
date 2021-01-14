@@ -1,13 +1,12 @@
 import React from "react";
 import styled, {createGlobalStyle} from "styled-components";
-import {Route,Switch} from "react-router-dom";
-
 import Header from "./component/Header";
+import {Switch, Route} from "react-router-dom";
+
 import Home from "./pages/Home";
 import Todo from "./pages/Todo";
-import Photo from "./pages/Photo";
-import Video from "./pages/Video";
 import User from "./pages/User";
+import Photo from "./pages/Photo";
 
 const App = () => {
     return (
@@ -19,7 +18,6 @@ const App = () => {
                 <Route exact path={'/'} component={Home}/>
                 <Route path={'/todo'} component={Todo}/>
                 <Route path={'/photo'} component={Photo}/>
-                <Route path={'/video'} component={Video}/>
                 <Route path={'/user'} component={User}/>
             </Switch>
 

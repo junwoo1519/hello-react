@@ -1,27 +1,30 @@
-import React, {useEffect, useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import axios from "axios";
+import {Button} from "../../component/Button/Button.Styled";
 import PageTitle from "../../component/Title/PageTitle";
+
 
 const User = () => {
 
-    const [user, setUser] = useState([]);
+    const [users, setUsers] = useState([]);
+
+    const getUsers = async () => {
+        const result = await axios.get("https://jsonplaceholder.typicode.com/users");
+        console.log(result);
+        setUsers(result.data);
+    }
 
     useEffect(() => {
-        getUser()
+        getUsers();
     }, [])
-
-    const getUser = async () => {
-       const result = await axios.get('https://jsonplaceholder.typicode.com/todos');
-       setUser(result.data)
-    }
 
     return (
         <Container>
             <PageTitle text={"Page User"}/>
             {
-                user.map((user, index) => {
-                    return <h2>{user.id}</h2>
+                users.map((user, index) => {
+                    return <h2 key={index}>{user.email}</h2>
                 })
             }
         </Container>

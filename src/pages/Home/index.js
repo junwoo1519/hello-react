@@ -9,12 +9,12 @@ const Home = () => {
     const [popup, setPopup] = useState(false)
 
     const countUp = () => {
-        if (count >= 10) return;
+        if (count >= 10) return
         setCount(count + 1)
     }
 
     const countDown = () => {
-        if (count === 1) return;
+        if (count === 1) return
         setCount(count - 1)
     }
 
@@ -24,7 +24,7 @@ const Home = () => {
 
     return (
         <Container>
-            <PageTitle text={"page home"}/>
+            <PageTitle text={"Page Home"}/>
             <Count>{count}</Count>
             <Buttons>
                 <Button onClick={countUp}>+</Button>
@@ -32,12 +32,13 @@ const Home = () => {
             </Buttons>
 
             <ButtonPopup onClick={() => {handlePopup(true)
-            }}>팝업 보기</ButtonPopup>
+            }}>Popup</ButtonPopup>
 
             {
-                popup && <Popup closePopup={() => handlePopup(false)}/>
+                popup && <Popup closePopup={() => {
+                handlePopup(false)}
+                }/>
             }
-
         </Container>
     )
 }
@@ -62,11 +63,11 @@ const Button = styled.div`
   height: 50px;
   border: 1px solid #000;
   margin: 0 5px;
+  font-size: 26px;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26px;
-  font-weight: 500;
   cursor: pointer;
 
   &:hover {
@@ -78,14 +79,14 @@ const ButtonPopup = styled.div`
   width: 150px;
   height: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: #18f;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
   text-transform: uppercase;
+  cursor: pointer;
   margin: 40px auto;
 `;
 
