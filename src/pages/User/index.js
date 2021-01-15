@@ -11,7 +11,6 @@ const User = () => {
 
     const getUsers = async () => {
         const result = await axios.get("https://jsonplaceholder.typicode.com/users");
-        console.log(result);
         setUsers(result.data);
     }
 
