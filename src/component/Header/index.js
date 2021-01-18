@@ -17,10 +17,9 @@ const Header = () => {
                 <Logo>Logo</Logo>
                 <Gnb>
                     <Nav>
-                        <NavItem to={'/'}>home</NavItem>
-                        <NavItem to={'/todo'}>todo</NavItem>
-                        <NavItem to={'/photo'}>photo</NavItem>
-                        <NavItem to={'/user'}>user</NavItem>
+                        <NavItem to={`/`}>home</NavItem>
+                        <NavItem to={`/todo`}>todo</NavItem>
+                        <NavItem to={`/photo`}>photo</NavItem>
                     </Nav>
                     <ButtonMenu onClick={handleSideMenu}>
                         <AiOutlineMenuUnfold/>

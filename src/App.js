@@ -5,7 +5,6 @@ import {Switch, Route} from "react-router-dom";
 
 import Home from "./pages/Home";
 import Todo from "./pages/Todo";
-import User from "./pages/User";
 import Photo from "./pages/Photo";
 import Detail from "./pages/Todo/Detail";
 
@@ -18,9 +17,8 @@ const App = () => {
             <Switch>
                 <Route exact path={'/'} component={Home}/>
                 <Route exact path={'/todo'} component={Todo}/>
-                <Route path={'/todo/detail:id'} component={Detail}/>
+                <Route path={'/todo/detail/:id'} component={Detail}/>
                 <Route path={'/photo'} component={Photo}/>
-                <Route path={'/user'} component={User}/>
             </Switch>
 
         </Container>
@@ -38,6 +36,11 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    vertical-align: top;
   }
 `;
 

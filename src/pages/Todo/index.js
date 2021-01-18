@@ -19,15 +19,17 @@ const Todo = () => {
     useEffect(() => {
         getTodos();
     }, [])
-
+        
+    console.log("todos", todos);
+    
     return (
         <Container>
             <PageTitle text={"Page Todo"}/>
             {
                 todos.map((item, index) => (
-                 <h2 key={index} className={cn({completed: item.completed})}>
-                    <Link to={`/todo/detail/${item.id}`}>{item.title}</Link>
-                 </h2>
+                    <h2 key={index} className={cn({completed: item.completed})}>
+                        <Link to={`/todo/detail/${item.id}`}>{item.title}</Link>
+                    </h2>
                 ))
             }
         </Container>
@@ -35,7 +37,13 @@ const Todo = () => {
 }
 
 const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
 
+  h2 {
+    margin: 10px 0;
+    cursor: pointer;
+  }
 `;
 
 export default Todo;
