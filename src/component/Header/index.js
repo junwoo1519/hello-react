@@ -3,13 +3,15 @@ import styled from "styled-components";
 import SideMenu from "../SideMenu";
 import {AiOutlineMenuUnfold} from "react-icons/all";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {Action} from "../../redux/reducer";
 
 const Header = () => {
 
-    const [sideMenu, setSideMenu] = useState(false)
-    const handleSideMenu = () => {
-        setSideMenu(!sideMenu);
-    }
+    const dispatch = useDispatch();
+    const {sideMenu} = useSelector(state => state)
+
+    const handleSideMenu = () => dispatch(Action.Creators.updateState(!sideMenu))
 
     return (
         <>

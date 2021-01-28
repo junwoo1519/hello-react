@@ -2,13 +2,14 @@ import React from "react";
 import styled, {createGlobalStyle} from "styled-components";
 import Header from "./component/Header";
 import {Switch, Route} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 import Home from "./pages/Home";
 import Todo from "./pages/Todo";
 import Photo from "./pages/Photo";
-import Detail from "./pages/Todo/Detail";
 
 const App = () => {
+    
     return (
         <Container className={"App"}>
             <GlobalStyle/>
@@ -16,8 +17,7 @@ const App = () => {
 
             <Switch>
                 <Route exact path={'/'} component={Home}/>
-                <Route exact path={'/todo'} component={Todo}/>
-                <Route path={'/todo/detail/:id'} component={Detail}/>
+                <Route path={'/todo'} component={Todo}/>
                 <Route path={'/photo'} component={Photo}/>
             </Switch>
 

@@ -1,25 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
+import {useDispatch, useSelector} from "react-redux";
+
 import PageTitle from "../../component/Title/PageTitle";
 import Popup from "../../component/Popup";
+import {Action} from "../../redux/reducer";
 
 const Home = () => {
 
-    const [count, setCount] = useState(1)
-    const [popup, setPopup] = useState(false)
+    const dispatch = useDispatch();
+    const {count, popup} = useSelector(state => state);
+
 
     const countUp = () => {
-        if (count >= 10) return
-        setCount(count + 1)
+        if (count >= 10) return;
+        dispatch(Action.Creators.updateState({count: count + 1}))
     }
 
     const countDown = () => {
-        if (count === 1) return
-        setCount(count - 1)
+        if (count === 1) return;
+        dispatch(Action.Creators.updateState({count: count - 1}))
     }
 
-    const handlePopup = (v) => {
-        setPopup(v);
+    const openPopup = () => {
+        dispatch(Action.Creators.updateState(true))
+    }
+
+    const closePopup = () => {
+        dispatch(Action.Creators.updateState(false))
     }
 
     return (
@@ -31,13 +39,11 @@ const Home = () => {
                 <Button onClick={countDown}>-</Button>
             </Buttons>
 
-            <ButtonPopup onClick={() => {handlePopup(true)
-            }}>Popup</ButtonPopup>
+            <ButtonPopup onClick={openPopup}>Popup</ButtonPopup>
 
             {
-                popup && <Popup closePopup={() => {
-                handlePopup(false)}
-                }/>
+                popup &&
+                <Popup closePopup={closePopup}/>
             }
         </Container>
     )

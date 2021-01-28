@@ -1,49 +1,24 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from "axios";
-import cn from "classnames";
-
-import PageTitle from "../../component/Title/PageTitle";
-import {Link} from "react-router-dom";
-
+import {Route, Switch} from "react-router-dom";
+import List from "./List";
+import Detail from "./Detail";
+import Write from "./Write";
 
 const Todo = () => {
-
-    const [todos, setTodos] = useState([]);
-
-    const getTodos = async () => {
-        const result = await axios.get("https://jsonplaceholder.typicode.com/todos");
-        setTodos(result.data);
-    }
-
-    useEffect(() => {
-        getTodos();
-    }, [])
-        
-    console.log("todos", todos);
-    
     return (
         <Container>
-            <PageTitle text={"Page Todo"}/>
-            {
-                todos.map((item, index) => (
-                    <h2 key={index} className={cn({completed: item.completed})}>
-                        <Link to={`/todo/detail/${item.id}`}>{item.title}</Link>
-                    </h2>
-                ))
-            }
+            <Switch>
+                <Route exact path={"/todo"} component={List}/>
+                <Route path={"/todo/detail/:id"} component={Detail}/>
+                <Route path={"/todo/write"} component={Write}/>
+            </Switch>
         </Container>
     )
 }
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
 
-  h2 {
-    margin: 10px 0;
-    cursor: pointer;
-  }
 `;
 
 export default Todo;
